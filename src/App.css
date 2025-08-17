@@ -1,0 +1,183 @@
+:root { --navup-h: 30px; }
+[main-theme="dark"]{
+  --primary-color: #1a1a1a;
+  --secondary-color: #333;
+  --text-color: #f0f0f0;
+  --accent-color: #ff5722;
+  --border-color: #444;
+}
+
+[main-theme="light"]{
+  --primary-color: #ffffff;
+  --secondary-color: #f0f0f0;
+  --text-color: #333;
+  --accent-color: #ff5722;
+  --border-color: #ccc;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Arial', sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+
+}
+
+h1, h2, h3, h4, h5, h6{
+  color: var(--text-color);
+}
+
+a{
+  color: var(--accent-color);
+  text-decoration: none;
+}
+.flag{
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+nav{
+   position: sticky;
+  /* top: calc(-1 * var(--navup-h));     */
+  top:-30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  background: #fff;   
+}
+.navup{
+  background-color:black;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    padding-inline: 50px;
+    color: white !important;
+    font-size: 13px;
+    height: var(--navup-h);
+}
+.leftnavup{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rightnavup{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.centernavup{
+  display:flex;
+  align-items:center;        /* vertical center in 50px bar */
+  width:365px;
+  height:100%;               /* will be 50px because parent is 50px */
+  color:white !important;
+  min-width:0;               /* good practice inside flex parents */
+}
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.mySwiper .swiper-slide{
+  flex-shrink:0;             /* <- required */
+  width:100%;                /* one slide per view; or set slidesPerView in JS */
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  color:white;
+}
+
+.swiper-slide strong {
+  margin-left: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.1px;   /* optional */
+  text-underline-offset: 1.1px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #00ff62 !important;
+  background-color: #00ff62;
+  background-color: #06111c;
+  transform: translateY(-50%);
+  width: fit-content !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  height: 10px;
+  font-size:10px !important;
+  color: white !important;
+  position: absolute !important;
+  font-weight: 900;
+  top: 40px !important;
+}
+
+.swiper-pagination-bullet {
+  background: #333 !important;
+}
+
+/* Remove pagination dots */
+.swiper-pagination {
+  display: none !important;
+}
+
+/* Remove horizontal scrollbar line */
+.swiper-scrollbar {
+  display: none !important;
+}
+.navdown{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FFFFFF;
+    height: 50px;
+    justify-content: space-between;
+    padding-inline: 50px;
+   position: relative;                /* (or just omit position) */
+  z-index: 10;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.items{
+  
+    list-style-type: none;
+}
+.items>a{
+display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.rightnavdown{
+    display: flex;
+    gap: 10px;
+}
+.rightnavdown>button{
+    padding: 2px;
+    border: none;
+     background-color: #FFFFFF;  
+}
