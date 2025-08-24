@@ -8,7 +8,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import './Hero.css';
+// import './Hero.css';
 
 // import required modules
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
@@ -17,7 +17,7 @@ import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 const Hero = () => {
   return (
     <div className='Hero'>
-        <Swiper
+        <Swiper className="HeroSwiper"
         spaceBetween={30}
         effect={'fade'}
         navigation={true}
@@ -25,10 +25,9 @@ const Hero = () => {
           clickable: true,
         }}
         modules={[EffectFade, Navigation, Pagination]}
-        className="mySwiper"
       >
         <SwiperSlide>
-          <div className="main" style={{
+          <div className="hero_main" style={{
       backgroundImage: "url(https://demo-milano.myshopify.com/cdn/shop/files/fs_new_s1.webp?v=1748226426&width=1500)",
       backgroundSize: "cover",
       backgroundPosition: "center"
@@ -36,12 +35,12 @@ const Hero = () => {
             <div>
                 <h5>MODERN EVERYDAY LOOKS</h5>
                 <h1>Soft Comfort Bold Looks</h1>
-                <button>Shop Collection</button>
+                <button className='whitebtn'>Shop Collection</button>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="main wide" style={{
+          <div className="hero_main wide" style={{
       backgroundImage: "url(https://demo-milano.myshopify.com/cdn/shop/files/fs_new_s2.webp?v=1748226426&width=1500)",
       backgroundSize: "cover",
       backgroundPosition: "center"
@@ -49,7 +48,7 @@ const Hero = () => {
             <div>
                 <h5>ELEVATE YOUR STYLE</h5>
                 <h1>Women's Fashion Collection</h1>
-                <button>Shop Collection</button>
+                <button className='whitebtn'>Shop Collection</button>
             </div>
           </div>
         </SwiperSlide>
