@@ -1,7 +1,9 @@
 import React from 'react'
 import './App.css'
+import { useNavigate } from 'react-router-dom'
 
 const Section1 = () => {
+  const navigate = useNavigate();
   return (
     <section className='section1'>
         <div className='category'>
@@ -37,14 +39,14 @@ const Section1 = () => {
                 <div>
                     <p>Save 30-50% on BLAZES</p>
                     <h1>Colour Spotlight</h1>
-                    <button className='whitebtn'>Shop Now</button>
+                    <button className='whitebtn' onClick={() => {navigate('/shop')}}>Shop Now</button>
                 </div>
             </div>
             <div className="morecategory1">
                 <div>
                     <p>LIMITED TIME ONLY</p>
                     <h1>Confident Looks</h1>
-                    <button className='whitebtn'>Shop Now</button>
+                    <button className='whitebtn' onClick={() => {navigate('/shop')}}>Shop Now</button>
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
 :root {
   --navup-h: 30px;
 }
@@ -123,8 +124,6 @@ nav {
 
 .mySwiper > .swiper-button-prev,
 .mySwiper > .swiper-button-next {
-  color: #00ff62 !important;
-  background-color: #00ff62;
   background-color: #06111c;
   transform: translateY(-50%);
   width: fit-content !important;
@@ -173,7 +172,14 @@ nav {
 }
 .items {
   list-style-type: none;
+  transition: all 0.3s ease;
 }
+.items:hover {
+  cursor: pointer;
+  color: orange;
+  transform: scale(1.1);
+}
+
 .items > a {
   display: flex;
   flex-direction: row;
@@ -184,12 +190,23 @@ nav {
 }
 .rightnavdown {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
-.rightnavdown > button {
-  padding: 2px;
-  border: none;
-  background-color: #ffffff;
+.rightnavdown >div {
+ /* border: 1px solid black;
+  background-color: #a30e0e;  */
+  cursor: pointer;
+  height: fit-content;
+  width: 25px;
+}
+.rightnavdown>div>i{
+  color: rgb(0, 0, 0);
+  display: inline-block !important;
+  transition: all 0.3s ease;
+}
+.rightnavdown>div>i:hover{
+  color: rgb(210, 138, 5);
+  transform: scale(1.2);
 }
 /* Tablets: reduce padding + spacing */
 @media (max-width: 1024px) {
@@ -380,22 +397,6 @@ nav {
 .HeroSwiper .swiper-slide.swiper-slide-active {
   z-index: 10 !important;
 }
-
-/* .hero_main>div>button{
-    margin-top: 5px;
-padding: 10px 25px;
-border: 2px solid white;
-border-radius: 25px;
-font-size: 14px;
-cursor: pointer;
-background-color: rgba(255, 255, 255, 0.721);
-transition: all 0.3s ease;
-}
-.hero_main>div>button:hover{
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(-3px);
-    background-color: white;
-} */
 .section1 {
   width: 100%;
   display: flex;
@@ -456,6 +457,11 @@ transition: all 0.3s ease;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
+}
+.categoriesdiv > div:hover img {
+  transform: scale(1.05);
+  cursor: pointer; /* zoom in slightly */
 }
 
 .categoriesdiv > h4 {
@@ -496,6 +502,7 @@ transition: all 0.3s ease;
   background-color: rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .morecategory1:nth-child(1) {
@@ -524,7 +531,6 @@ transition: all 0.3s ease;
   text-align: center;
   z-index: 2;
 }
-
 .morecategory1 div > h1 {
   font-size: 35px;
 }
@@ -1004,7 +1010,7 @@ transition: all 0.3s ease;
   width: 30px;
   height: 30px;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 50%;
 }
 
 .sec2icon img {

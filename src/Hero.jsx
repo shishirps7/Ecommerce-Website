@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useNavigate } from 'react-router-dom';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -8,13 +9,14 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// import './Hero.css';
+
 
 // import required modules
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className='Hero'>
         <Swiper className="HeroSwiper"
@@ -35,7 +37,7 @@ const Hero = () => {
             <div>
                 <h5>MODERN EVERYDAY LOOKS</h5>
                 <h1>Soft Comfort Bold Looks</h1>
-                <button className='whitebtn'>Shop Collection</button>
+                <button className='whitebtn' onClick={() => {navigate('/shop')}}>Shop Collection</button>
             </div>
           </div>
         </SwiperSlide>
@@ -48,7 +50,7 @@ const Hero = () => {
             <div>
                 <h5>ELEVATE YOUR STYLE</h5>
                 <h1>Women's Fashion Collection</h1>
-                <button className='whitebtn'>Shop Collection</button>
+                <button className='whitebtn' onClick={() => {navigate('/shop')}}>Shop Collection</button>
             </div>
           </div>
         </SwiperSlide>
