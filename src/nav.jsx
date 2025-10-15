@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -6,12 +6,15 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
+import CartContext from "./CartContext";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 const Nav = () => {
+  const navigate=useNavigate()
+  const {cart}=useContext(CartContext)
   return (
     <nav>
       <div className="navup">
@@ -211,17 +214,45 @@ const Nav = () => {
               }}
             ></i>
             </div>    
-          <div>
-            <i
-              className="nf nf-md-cart_outline"
-              style={{
-                width: "10px",
-                height: "10px",
-                fontSize: "18px",
-                fontWeight: "500",
-              }}
-            ></i>
-          </div>
+          <div style={{ position: "relative" }}>
+  <i
+    onClick={() => {
+      navigate("/Cart");
+    }}
+    className="nf nf-md-cart_outline"
+    style={{
+      width: "10px",
+      height: "10px",
+      fontSize: "18px",
+      fontWeight: "500",
+    }}
+  ></i>
+
+  {/* Badge */}
+  {cart.length > 0 && (
+    <span
+      style={{
+        position: "absolute",
+        top: "-5px",
+        right: "-5px",
+        background: "red",
+        color: "white",
+        fontSize: "10px",
+        fontWeight: "bold",
+        width: "14px",
+        height: "14px",
+        borderRadius: "50%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding:"1px"
+      }}
+    >
+      {cart.reduce((acc, item) => acc + item.amount, 0)}
+    </span>
+  )}
+</div>
+
         </div>
       </div>
     </nav>
